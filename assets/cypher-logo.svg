@@ -1,0 +1,30 @@
+<svg viewBox="0 0 340 100" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Cypher Labs">
+  <defs>
+    <linearGradient id="cypher-grad-lo" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#8b5cf6"/>
+      <stop offset="55%" stop-color="#6366f1"/>
+      <stop offset="100%" stop-color="#22d3ee"/>
+    </linearGradient>
+  </defs>
+  <!-- Mark -->
+  <g transform="translate(0,0)">
+    <path
+      d="M 74 25 L 50 11 L 20 28.5 L 20 71.5 L 50 89 L 74 75"
+      fill="none"
+      stroke="url(#cypher-grad-lo)"
+      stroke-width="10"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    />
+    <circle cx="50" cy="50" r="5" fill="url(#cypher-grad-lo)"/>
+  </g>
+  <!-- Wordmark: "Cypher Labs" -->
+  <text
+    x="110" y="63"
+    font-family="Inter, -apple-system, system-ui, sans-serif"
+    font-size="34"
+    font-weight="600"
+    letter-spacing="-1"
+    fill="#e6ecf5"
+  >Cypher<tspan font-family="Instrument Serif, Georgia, serif" font-style="italic" font-weight="400" fill="url(#cypher-grad-lo)"> Labs</tspan></text>
+</svg>

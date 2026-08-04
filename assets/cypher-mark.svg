@@ -1,0 +1,20 @@
+<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Cypher Labs">
+  <defs>
+    <linearGradient id="cypher-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#8b5cf6"/>
+      <stop offset="55%" stop-color="#6366f1"/>
+      <stop offset="100%" stop-color="#22d3ee"/>
+    </linearGradient>
+  </defs>
+  <!-- Hexagonal C: three-quarter hex ring, open on the right -->
+  <path
+    d="M 74 25 L 50 11 L 20 28.5 L 20 71.5 L 50 89 L 74 75"
+    fill="none"
+    stroke="url(#cypher-grad)"
+    stroke-width="10"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  />
+  <!-- Specimen dot: the "lab" -->
+  <circle cx="50" cy="50" r="5" fill="url(#cypher-grad)"/>
+</svg>
