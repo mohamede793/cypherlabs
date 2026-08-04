@@ -1,0 +1,331 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cypher Labs</title>
+    <meta name="description" content="Cypher Labs LLC — an independent studio building focused, private-first software." />
+    <meta name="theme-color" content="#0B1220" />
+
+    <meta property="og:title" content="Cypher Labs" />
+    <meta property="og:description" content="An independent studio building focused, private-first software." />
+    <meta property="og:type" content="website" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      :root {
+        --bg: #0b1220;
+        --bg-2: #0f172a;
+        --ink: #e2e8f0;
+        --ink-dim: #94a3b8;
+        --ink-mute: #64748b;
+        --accent: #7dd3fc;
+        --accent-2: #38bdf8;
+        --line: rgba(148, 163, 184, 0.14);
+        --card: rgba(255, 255, 255, 0.03);
+        --card-hover: rgba(255, 255, 255, 0.05);
+      }
+
+      * { box-sizing: border-box; }
+      html, body { margin: 0; padding: 0; }
+      body {
+        font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+        background:
+          radial-gradient(1200px 600px at 15% -10%, rgba(56, 189, 248, 0.10), transparent 60%),
+          radial-gradient(900px 500px at 90% 10%, rgba(125, 211, 252, 0.06), transparent 60%),
+          var(--bg);
+        color: var(--ink);
+        -webkit-font-smoothing: antialiased;
+        line-height: 1.55;
+        min-height: 100vh;
+      }
+      a { color: inherit; text-decoration: none; }
+      .mono { font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace; }
+
+      .wrap { max-width: 960px; margin: 0 auto; padding: 0 24px; }
+
+      /* Nav */
+      nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 24px 0;
+      }
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-weight: 700;
+        letter-spacing: -0.01em;
+        font-size: 15px;
+      }
+      .brand-mark {
+        width: 22px;
+        height: 22px;
+        border-radius: 6px;
+        background: linear-gradient(135deg, var(--accent), var(--accent-2));
+        display: grid;
+        place-items: center;
+        color: var(--bg);
+        font-family: "JetBrains Mono", monospace;
+        font-size: 13px;
+        font-weight: 700;
+      }
+      nav .links {
+        display: flex;
+        gap: 24px;
+        font-size: 13px;
+        color: var(--ink-dim);
+      }
+      nav .links a:hover { color: var(--ink); }
+
+      /* Hero */
+      header.hero {
+        padding: 96px 0 72px;
+        border-bottom: 1px solid var(--line);
+      }
+      .eyebrow {
+        display: inline-block;
+        font-size: 12px;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--accent);
+        margin-bottom: 20px;
+      }
+      h1 {
+        font-size: clamp(36px, 5.5vw, 56px);
+        line-height: 1.05;
+        letter-spacing: -0.03em;
+        margin: 0 0 20px;
+        font-weight: 700;
+      }
+      h1 .accent {
+        background: linear-gradient(135deg, var(--accent), var(--accent-2));
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+      }
+      .lead {
+        font-size: 18px;
+        color: var(--ink-dim);
+        max-width: 620px;
+        margin: 0 0 32px;
+      }
+
+      /* Sections */
+      section { padding: 72px 0; border-bottom: 1px solid var(--line); }
+      section:last-of-type { border-bottom: none; }
+      .section-label {
+        font-family: "JetBrains Mono", monospace;
+        font-size: 12px;
+        color: var(--ink-mute);
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        margin-bottom: 24px;
+      }
+      h2 {
+        font-size: clamp(22px, 3vw, 28px);
+        font-weight: 600;
+        letter-spacing: -0.02em;
+        margin: 0 0 16px;
+      }
+      p { color: var(--ink-dim); margin: 0 0 12px; }
+      p.body-lg { font-size: 16px; color: var(--ink); max-width: 640px; }
+
+      /* Product cards */
+      .products {
+        display: grid;
+        gap: 16px;
+        grid-template-columns: 1fr;
+      }
+      @media (min-width: 720px) {
+        .products { grid-template-columns: 1fr 1fr; }
+      }
+      .product {
+        display: block;
+        background: var(--card);
+        border: 1px solid var(--line);
+        border-radius: 14px;
+        padding: 28px 26px;
+        transition: background 160ms ease, transform 160ms ease, border-color 160ms ease;
+      }
+      .product:hover {
+        background: var(--card-hover);
+        border-color: rgba(125, 211, 252, 0.28);
+        transform: translateY(-2px);
+      }
+      .product .name {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 17px;
+        font-weight: 600;
+        margin-bottom: 8px;
+      }
+      .product .dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: var(--accent-2);
+        box-shadow: 0 0 0 4px rgba(56, 189, 248, 0.14);
+      }
+      .product .desc {
+        color: var(--ink-dim);
+        font-size: 14px;
+        margin-bottom: 16px;
+        line-height: 1.55;
+      }
+      .product .link {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        font-size: 13px;
+        color: var(--accent);
+        font-weight: 500;
+      }
+      .product .link .arrow {
+        transition: transform 160ms ease;
+      }
+      .product:hover .link .arrow { transform: translateX(3px); }
+
+      /* Contact grid */
+      .contact-grid {
+        display: grid;
+        gap: 28px;
+        grid-template-columns: 1fr;
+        margin-top: 8px;
+      }
+      @media (min-width: 640px) {
+        .contact-grid { grid-template-columns: 1fr 1fr; }
+      }
+      .contact-item .k {
+        font-family: "JetBrains Mono", monospace;
+        font-size: 11px;
+        color: var(--ink-mute);
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        margin-bottom: 6px;
+      }
+      .contact-item .v {
+        color: var(--ink);
+        font-size: 15px;
+      }
+      .contact-item .v a {
+        color: var(--accent);
+        border-bottom: 1px solid rgba(125, 211, 252, 0.25);
+      }
+      .contact-item .v a:hover { color: var(--accent-2); border-color: var(--accent-2); }
+
+      /* Footer */
+      footer {
+        padding: 40px 0 56px;
+        color: var(--ink-mute);
+        font-size: 12px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        justify-content: space-between;
+        border-top: 1px solid var(--line);
+      }
+
+      ::selection { background: rgba(125, 211, 252, 0.25); color: var(--ink); }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <nav>
+        <a class="brand" href="/">
+          <span class="brand-mark">C</span>
+          <span>Cypher Labs</span>
+        </a>
+        <div class="links">
+          <a href="#products">Products</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </nav>
+
+      <header class="hero">
+        <span class="eyebrow">Independent Studio · Est. 2026</span>
+        <h1>Small tools.<br /><span class="accent">Big intent.</span></h1>
+        <p class="lead">
+          Cypher Labs is an independent software studio. We build focused,
+          private-first products for people who want their devices to work
+          for them, not the other way around.
+        </p>
+      </header>
+
+      <section id="about">
+        <div class="section-label">01 — About</div>
+        <h2>Who we are</h2>
+        <p class="body-lg">
+          Cypher Labs LLC is a Wyoming-registered studio owned and operated
+          by a single founder. We ship a small number of products with
+          long-term care rather than a large portfolio with none.
+          Our design principles are simple: keep sensitive data on device
+          whenever possible, respect the user's attention, and be honest
+          about what the software can and cannot do.
+        </p>
+      </section>
+
+      <section id="products">
+        <div class="section-label">02 — Products</div>
+        <h2>What we've shipped</h2>
+        <div class="products">
+          <a class="product" href="https://getihsan.app" target="_blank" rel="noopener">
+            <div class="name"><span class="dot"></span>Ihsan</div>
+            <div class="desc">
+              A private, iOS-only recovery companion for Muslims. Islamic
+              guidance paired with neuroscience-backed tools to help people
+              overcome pornography addiction — kept on-device wherever
+              possible.
+            </div>
+            <span class="link">getihsan.app <span class="arrow">→</span></span>
+          </a>
+          <div class="product" style="border-style: dashed; opacity: 0.7;">
+            <div class="name"><span class="dot" style="background: var(--ink-mute); box-shadow: none;"></span>More coming</div>
+            <div class="desc">
+              We're heads-down on new work. If you'd like to hear about
+              future releases, just email us.
+            </div>
+            <span class="link" style="color: var(--ink-mute);">In the workshop</span>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact">
+        <div class="section-label">03 — Contact</div>
+        <h2>Get in touch</h2>
+        <p class="body-lg">
+          For product support, press, partnerships, or legal matters, the
+          fastest way to reach us is by email.
+        </p>
+        <div class="contact-grid">
+          <div class="contact-item">
+            <div class="k">Email</div>
+            <div class="v"><a href="mailto:hello@cypherlabs.dev">hello@cypherlabs.dev</a></div>
+          </div>
+          <div class="contact-item">
+            <div class="k">Registered Address</div>
+            <div class="v">
+              Cypher Labs LLC<br />
+              30 N Gould St, Ste N<br />
+              Sheridan, WY 82801<br />
+              United States
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <footer>
+        <div>© 2026 Cypher Labs LLC. All rights reserved.</div>
+        <div class="mono">v1.0</div>
+      </footer>
+    </div>
+  </body>
+</html>
